@@ -23,14 +23,14 @@ textarea:focus, input:focus{
 }
 
 .content {
-    padding: 40px 50px 30px 50px;
+    padding: 0px 50px 30px 50px;
 }
 
 .search-field {
     margin: 0 30% 40px 30%;
 }
 
-.search-field div {
+.search-field form {
     width: 100%;
     display: flex;
 }
@@ -42,7 +42,7 @@ textarea:focus, input:focus{
     font-weight: 200;
     font-family: 20px;
     width: 70%;
-    border-bottom: $primaryText 1px solid;
+    border-bottom: $negative 1px solid;
     margin-right: 30%;
     transition: .4s;
 }
@@ -58,4 +58,9 @@ textarea:focus, input:focus{
 .search-field .icon {
     vertical-align: middle;
     cursor: pointer;
+}
+
+.clock {
+    text-align: end;
+    padding: 20px 20px 0px 0px;
 }

@@ -1,0 +1,82 @@
+@import '../variables.scss';
+
+.info {
+    margin-top: 50px;
+}
+
+.header {
+    text-align: center;
+    font-weight: 400;
+    font-size: 37px;
+    margin: 0;
+}
+
+.header span {
+    font-weight: 200;
+    color: $secondaryText;
+}
+
+.weather {
+    margin: 0;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 200;
+    color: $secondaryText;
+    text-transform: lowercase;
+}
+
+.weather-icon {
+    font-size: 40px;
+    text-align: center;
+}
+
+.weather-info {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.weather-info .weather-data-container {
+    margin-bottom: 30px;
+
+    &:last-child {
+        margin-bottom: 30px;
+    }
+}
+
+
+.weather-info p {
+    margin: 0;
+    padding: 0;
+}
+
+.weather-data {
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.weather-data-name {
+    font-weight: 300;
+    color: $secondaryText;
+}
+
+.wind {
+    margin-top: 30px;
+    margin-bottom: 0;
+    text-align: center
+}
+
+.wind p {
+    margin: 0;
+    margin-top: 5px;
+    font-weight: 200;
+}
+
+.wind img {
+    filter: invert(50%) sepia(79%) saturate(0%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    width: 40px;
+    height: 40px;
+}
+
+.wind p ion-icon {
+    vertical-align: middle;
+}

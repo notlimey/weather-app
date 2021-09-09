@@ -11,8 +11,17 @@ export default function App() {
   const [city, setCity] = useState();
   const [countryCode, setCountryCode] = useState();
   const [foundCity, setFoundCity] = useState(false);
+  const [time, setTime] = useState(new Date());
 
   useEffect(() => {
+    setInterval(function(){ 
+      var t = new Date();
+      setTime(t); 
+    }, 1000);
+  }, [])
+
+  useEffect(() => {
+    
     const fetchData = async () => {
       navigator.geolocation.getCurrentPosition(function(position) {
         setLat(position.coords.latitude);
@@ -46,24 +55,34 @@ export default function App() {
     fetchData();
   }, [lat,long, city, countryCode])
 
-  const changeCity = async () => {
+  const changeCity = async (e) => {
+    e.preventDefault();
+
     if(inputCity === undefined) {
       return;
     }else {
       setCity(inputCity);
+      setInputCity('');
     }
   }
 
   return (
+    
     <div className="main-content">
+      <p className="clock">{time.toLocaleTimeString()}</p>
       <div className="content">
         {(typeof weather.main != 'undefined') ? (
           <>
-            <div className="search-field">
-              <div>
-                <input className="search-input" placeholder="City" onChange={e => setInputCity(e.target.value)} />
+            <div className="search-field" id="search">
+              <form onSubmit={changeCity}>
+                <input 
+                  className="search-input"
+                  placeholder="City" 
+                  onChange={e => setInputCity(e.target.value)} 
+                  value={inputCity}
+                />
                 <SearchIcon onClick={changeCity} className="icon" />
-              </div>
+              </form>
             </div>
             {foundCity ? <><Weather weatherData={weather}/></> : <><p>Can't find city</p></>}
           </>
