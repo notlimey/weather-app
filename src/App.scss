@@ -1,0 +1,61 @@
+@import './variables.scss';
+
+body {
+    background-color: $primaryColor;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: $primaryText;
+    font-family: $primaryFont;
+    background-color: $primaryColorV2;
+    margin-top: 60px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px -1px $primaryColorV3;
+}
+
+.content {
+    padding: 40px 50px 30px 50px;
+}
+
+.search-field {
+    margin: 0 30% 40px 30%;
+}
+
+.search-field div {
+    width: 100%;
+    display: flex;
+}
+
+.search-input {
+    background-color: transparent;
+    color: $primaryText;
+    border: none;
+    font-weight: 200;
+    font-family: 20px;
+    width: 70%;
+    border-bottom: $primaryText 1px solid;
+    margin-right: 30%;
+    transition: .4s;
+}
+
+.search-input:focus {
+    width: 95%;
+    border-bottom: $primaryText 1px solid;
+    margin-right: 0;
+    margin-right: 5%;
+}
+
+
+.search-field .icon {
+    vertical-align: middle;
+    cursor: pointer;
+}
