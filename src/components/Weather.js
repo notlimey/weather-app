@@ -6,6 +6,7 @@ import Haze from '../files/haze.svg';
 import Dust from '../files/dust.svg';
 import Dust2 from '../files/dust2.svg';
 import Fog from '../files/fog.svg';
+import Tornado from '../files/tornado.svg';
 
 var icons = [
     {
@@ -118,8 +119,8 @@ var icons = [
         description: [
             { 
                 title: "squalls",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Mist} alt='' />`,
+                iconNight: `<img src=${Mist} alt='' />`,
             }
         ] 
     },
@@ -128,8 +129,8 @@ var icons = [
         description: [
             { 
                 title: "tornado",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Tornado} alt='' />`,
+                iconNight: `<img src=${Tornado} alt='' />`,
             }
         ] 
     },
