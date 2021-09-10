@@ -1,6 +1,11 @@
 import React , { useEffect, useState } from 'react'
 import '../scss/info.scss'
 import Wind from '../files/wind.svg';
+import Mist from '../files/mist.svg';
+import Haze from '../files/haze.svg';
+import Dust from '../files/dust.svg';
+import Dust2 from '../files/dust2.svg';
+import Fog from '../files/fog.svg';
 
 var icons = [
     {
@@ -43,8 +48,8 @@ var icons = [
         description: [
             { 
                 title: "mist",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Mist} alt='' />`,
+                iconNight: `<img src=${Mist} alt='' />`,
             }
         ] 
     },
@@ -53,8 +58,8 @@ var icons = [
         description: [
             { 
                 title: "Smoke",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Mist} alt='' />`,
+                iconNight: `<img src=${Mist} alt='' />`,
             }
         ] 
     },
@@ -63,8 +68,8 @@ var icons = [
         description: [
             { 
                 title: "Haze",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Haze} alt='' />`,
+                iconNight: `<img src=${Haze} alt='' />`,
             }
         ] 
     },
@@ -73,8 +78,8 @@ var icons = [
         description: [
             { 
                 title: "sand/ dust whirls",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Dust} alt='' />`,
+                iconNight: `<img src=${Dust} alt='' />`,
             }
         ] 
     },
@@ -83,8 +88,8 @@ var icons = [
         description: [
             { 
                 title: "fog",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Fog} alt='' />`,
+                iconNight: `<img src=${Fog} alt='' />`,
             }
         ] 
     },
@@ -93,8 +98,8 @@ var icons = [
         description: [
             { 
                 title: "dust",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Dust} alt='' />`,
+                iconNight: `<img src=${Dust} alt='' />`,
             }
         ] 
     },
@@ -103,8 +108,8 @@ var icons = [
         description: [
             { 
                 title: "volcanic ash",
-                iconDay: "<ion-icon name='cloudy-outline'></ion-icon>",
-                iconNight: "<ion-icon name='cloudy-outline'></ion-icon>",
+                iconDay: `<img src=${Dust2} alt='' />`,
+                iconNight: `<img src=${Dust2} alt='' />`,
             }
         ] 
     },
@@ -351,8 +356,6 @@ function GetIcon(main, description) {
         dayOrNight = "Night";
     }
 
-    console.log(main + "  " + description)
-
     var item = icons.find((e) => e.name === main)
 
     if(item === undefined)
@@ -385,7 +388,8 @@ const Weather = ({weatherData}) => {
 
     return (
         <div className="info">
-            <div className="weather-icon" dangerouslySetInnerHTML={{__html: i}}>
+            <div className="weather-icon" dangerouslySetInnerHTML={{__html: i}} >
+               
             </div>
             <h2 className="header">{weatherData.name}, <span>{weatherData.sys.country}</span></h2>
             <p className="weather">{weatherData.weather[0].description}</p>
@@ -395,11 +399,11 @@ const Weather = ({weatherData}) => {
             </div>
             <div className="weather-info">
                 <div className="weather-data-container">
-                    <p className="weather-data">{((weatherData.main.temp - 273.15).toFixed(1))}</p>
+                    <p className="weather-data">{((weatherData.main.temp - 273.15).toFixed(1))}<span>°c</span></p>
                     <p className="weather-data-name">Temperature</p>
                 </div>
                 <div className="weather-data-container">
-                    <p className="weather-data">{((weatherData.main.feels_like - 273.15).toFixed(1))}</p>
+                    <p className="weather-data">{((weatherData.main.feels_like - 273.15).toFixed(1))}<span>°c</span></p>
                     <p className="weather-data-name">Feels Like</p>
                 </div>
             </div>

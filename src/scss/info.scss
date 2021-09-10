@@ -30,6 +30,13 @@
     text-align: center;
 }
 
+.weather-icon img {
+    filter: invert(50%) sepia(79%) saturate(0%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    max-width: 40px;
+    max-height: 40px;
+    height: 100%;
+}
+
 .weather-info {
     margin-top: 30px;
     text-align: center;
@@ -54,10 +61,17 @@
     font-size: 25px;
 }
 
+.weather-data span {
+    color: $secondaryText;
+    font-weight: 300;
+}
+
 .weather-data-name {
     font-weight: 300;
     color: $secondaryText;
 }
+
+
 
 .wind {
     margin-top: 30px;

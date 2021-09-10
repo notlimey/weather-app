@@ -7,7 +7,7 @@ export default function App() {
   const [lat, setLat] = useState([]);
   const [long, setLong] = useState([]);
   const [weather, setWeather] = useState([]);
-  const [inputCity, setInputCity] = useState();
+  const [inputCity, setInputCity] = useState('');
   const [city, setCity] = useState();
   const [countryCode, setCountryCode] = useState();
   const [foundCity, setFoundCity] = useState(false);
@@ -78,7 +78,7 @@ export default function App() {
                 <input 
                   className="search-input"
                   placeholder="City" 
-                  onChange={e => setInputCity(e.target.value)} 
+                  onChange={e => {setInputCity(e.target.value)}} 
                   value={inputCity}
                 />
                 <SearchIcon onClick={changeCity} className="icon" />
@@ -91,6 +91,9 @@ export default function App() {
             <p>Loading...</p>
           </div>
         )}
+      </div>
+      <div className="made-by">
+          <p>Created with <ion-icon name="heart"></ion-icon> by <a href="https://github.com/NotLimey/">Limey</a></p>
       </div>
     </div>
   );
