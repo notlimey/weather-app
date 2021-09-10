@@ -11,7 +11,7 @@ export default function App() {
   const [city, setCity] = useState();
   const [countryCode, setCountryCode] = useState();
   const [foundCity, setFoundCity] = useState(false);
-  const [tooManyRequests] = useState(false);
+  const [tooManyRequests, setTooManyRequests] = useState(false);
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -40,10 +40,14 @@ export default function App() {
               .then((response => {
                 if(response.ok) {
                     setFoundCity(true);
+                    setTooManyRequests(false);
                     return response.json()
                 }
                 if(response.status === 404) {
                   setFoundCity(false);
+                }
+                if(response.status === 429) {
+                  setTooManyRequests(true);
                 }
                 throw response;
               }))
@@ -62,10 +66,14 @@ export default function App() {
             .then((response => {
               if(response.ok) {
                   setFoundCity(true);
+                  setTooManyRequests(false);
                   return response.json()
               }
               if(response.status === 404) {
                 setFoundCity(false);
+              }
+              if(response.status === 429) {
+                setTooManyRequests(true);
               }
               throw response;
             }))
